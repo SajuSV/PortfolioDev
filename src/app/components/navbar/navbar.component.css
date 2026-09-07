@@ -246,10 +246,3 @@ body.nav-open .site-nav {
 .btn-resume:hover p {
   color: var(--color-charcoal);
 }
-
-/* Responsive Overrides */
-@media (max-width: 640px) {
-  .site-header-actions-wrapper {
-    display: none;
-  }
-}
