@@ -1,0 +1,260 @@
+/* =====================================================================
+   1. TOKENS & FONTS
+   ===================================================================== */
+:root {
+  --color-primary: #2ebdff;
+  --color-accent-lime: #1fc7ff;
+  --color-surface-white: #ffffff;
+  --color-charcoal: #2f2f2f;
+  --color-bg-light: #ffffff;
+  --color-border-grid: #e8e8e8;
+
+  --font-manrope: "Manrope", Arial, sans-serif;
+  --font-inter: "Inter", Arial, sans-serif;
+  --font-ranade: "Ranade", Arial, sans-serif;
+  --font-clash: "Clash Display", Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/assets/fonts/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Ranade";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400 700;
+  src: url("/assets/fonts/fontshare-7.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Clash Display";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400 700;
+  src: url("/assets/fonts/fontshare-6.woff2") format("woff2");
+}
+
+/* =====================================================================
+   2. RESETS & CORE LAYOUT
+   ===================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-light);
+  font-family: var(--font-inter);
+  overflow-x: clip;
+}
+
+.page-root.bp-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  padding: 160px clamp(16px, 3vw, 40px) 100px;
+}
+
+/* =====================================================================
+   3. TYPOGRAPHY SYSTEM
+   ===================================================================== */
+.ui-text {
+  text-align: start;
+  line-height: 1.2;
+}
+
+.text-charcoal {
+  color: var(--color-charcoal);
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.text-preset-section-label {
+  font-family: var(--font-manrope);
+  font-size: clamp(13px, 1.5vw, 18px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: rgba(47, 47, 47, 0.5);
+}
+
+.text-preset-section-heading {
+  font-family: var(--font-clash);
+  font-size: clamp(32px, 5vw, 72px);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.project-intro-text {
+  font-family: var(--font-ranade);
+  font-size: clamp(16px, 1.8vw, 22px);
+  letter-spacing: -0.04em;
+  line-height: 1.5;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+}
+
+.text-preset-tag {
+  font-family: var(--font-ranade);
+  font-size: clamp(13px, 1.4vw, 17px);
+  letter-spacing: -0.04em;
+}
+
+.text-preset-project-title {
+  font-family: var(--font-clash);
+  font-size: clamp(24px, 2.5vw, 30px);
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.text-preset-small {
+  font-family: var(--font-ranade);
+  font-size: clamp(13px, 1.2vw, 15px);
+  letter-spacing: -0.04em;
+  line-height: 1.3;
+}
+
+/* =====================================================================
+   4. HEADING & INTRO
+   ===================================================================== */
+.projects-page-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.projects-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projects-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-accent-lime);
+  box-shadow: 0 2px 13px rgba(31, 199, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.projects-intro {
+  width: 100%;
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+/* =====================================================================
+   5. PROJECTS 2x2 GRID & CARDS
+   ===================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background-color: var(--color-border-grid);
+  border: 1px solid var(--color-border-grid);
+  border-radius: 14px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: clamp(30px, 4vw, 50px) clamp(20px, 2.5vw, 30px) clamp(20px, 2.5vw, 30px);
+  background-color: var(--color-surface-white);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background-color 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  background-color: #fafafa;
+}
+
+.project-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: clamp(24px, 3vw, 40px);
+}
+
+.project-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  transition: transform 0.5s ease;
+}
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* =====================================================================
+   6. RESPONSIVENESS
+   ===================================================================== */
+@media (max-width: 860px) {
+  .projects-page-container {
+    padding-top: 120px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-intro {
+    margin-bottom: 40px;
+  }
+}
