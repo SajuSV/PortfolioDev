@@ -107,8 +107,8 @@ export class InfiniteGalleryRenderer {
   private gridWidth = 0;
   private gridHeight = 0;
 
-  private autoSpeedX = 0.6;
-  private autoSpeedY = 0.4;
+  private autoSpeedX = 1.5;
+  private autoSpeedY = 1;
 
   private viewOffset = { x: 0, y: 0 };
   private drag = {
@@ -632,7 +632,7 @@ export class MygallaryComponent implements AfterViewInit, OnDestroy {
   private renderer!: InfiniteGalleryRenderer;
 
   private autoplayTimer: any = null;
-  private readonly autoplayMs = 3200;
+  private readonly autoplayMs = 2000;
 
   // card drag-to-move state
   private startX = 0;
