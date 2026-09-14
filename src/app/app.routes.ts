@@ -7,6 +7,7 @@ import { LogodesignComponent } from './pages/logodesign/logodesign.component';
 import { PosterdesignComponent } from './pages/posterdesign/posterdesign.component';
 import { MygallaryComponent } from './pages/mygallary/mygallary.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { IndependentProjectsComponent } from './pages/independent-projects/independent-projects.component';
 
 export const routes: Routes = [
   {
@@ -41,6 +42,10 @@ export const routes: Routes = [
   {
     path: 'projects/mygallery',
     component: MygallaryComponent
+  },
+  {
+    path: 'projects/independent-projects',
+    component: IndependentProjectsComponent
   },
   {
     path: '**',

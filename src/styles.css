@@ -344,14 +344,25 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
   border-radius: 35px;
   max-width: 100%;
 }
+.availability-badge1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.5vw, 20px);
+  min-height: 56px;
+  padding: 12px 12px 12px clamp(16px, 2vw, 30px) ;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 100%;
+}
 
-.availability-badge .availability-badge-dot {
+.availability-badge1 .availability-badge-dot, .availability-badge .availability-badge-dot {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.availability-badge .div-green-small-div {
+.availability-badge1 .div-green-small-div, .availability-badge .div-green-small-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -362,13 +373,13 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
   flex-shrink: 0;
 }
 
-.availability-badge .div-green-small-div-wrapper {
+.availability-badge1 .div-green-small-div-wrapper, .availability-badge .div-green-small-div-wrapper {
   width: 22px;
   height: 22px;
   transition: transform 0.2s ease;
 }
 
-.availability-badge:hover .div-green-small-div-wrapper {
+.availability-badge1:hover .div-green-small-div-wrapper, .availability-badge:hover .div-green-small-div-wrapper {
   transform: rotate(45deg);
 }
 
@@ -1211,6 +1222,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
 .panel-primary-r35-h100 {
   background-color: var(--color-primary);
 }
+.panel-primary-r35-h102 {
+  background-color: var(--color-primary);
+  width: 100%;
+}
 
 .panel-primary-r35 {
   background-color: var(--color-primary);
@@ -1486,7 +1501,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
     grid-template-columns: 1fr;
   }
 
-  .availability-badge {
+  .availability-badge, .availability-badge1 {
     width: 100%;
     justify-content: space-between;
   }
