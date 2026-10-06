@@ -39,7 +39,7 @@ export class AppComponent {
         filter(event => event instanceof NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
-        this.isGallaryPage = event.urlAfterRedirects === '/projects/mygallery';
+        this.isGallaryPage = event.urlAfterRedirects === '/projects/gallery';
       });
   }
 }
