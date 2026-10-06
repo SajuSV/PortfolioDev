@@ -40,7 +40,7 @@ export const routes: Routes = [
     component: PosterdesignComponent
   },
   {
-    path: 'projects/mygallery',
+    path: 'projects/gallery',
     component: MygallaryComponent
   },
   {
